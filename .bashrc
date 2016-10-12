@@ -17,7 +17,7 @@ fi
 # If this is an xterm set the title to working directory
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\W\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\w\a\]$PS1"
     ;;
 *)
     ;;
