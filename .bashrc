@@ -3,7 +3,6 @@ alias grep='grep --color'
 alias n='ncmpcpp'
 alias pw='pwgen -s 25'
 
-
 #pretty prompt colors
 #PS1='[\u@\h \W]\$ '
 #with this if statement, a -686 will be appended to the bash prompt if I'm in my i686 schroot
@@ -82,3 +81,8 @@ eval "$(rbenv init -)"
 
 export GOPATH=${HOME}/dev/go
 
+alias today='gdate +%F'
+recap() {
+  timeframe=$1
+  for f in `find . -ctime -${timeframe} -type f ! -name ".*swp" ! -name "todo" `; do echo -e "\033[0;32m $f: \033[0m"; printf %s"\n\n" "$(cat $f)"; done
+}
