@@ -84,5 +84,5 @@ export GOPATH=${HOME}/dev/go
 alias today='gdate +%F'
 recap() {
   timeframe=$1
-  for f in `find . -ctime -${timeframe} -type f ! -name ".*swp" ! -name "todo" `; do echo -e "\033[0;32m $f: \033[0m"; printf %s"\n\n" "$(cat $f)"; done
+  for f in `find . -ctime -${timeframe} -type f ! -name ".*swp" ! -name "*.png" ! -name "todo" | sort `; do echo -e "\033[0;32m $f: \033[0m"; printf %s"\n\n" "$(cat $f)"; done
 }
