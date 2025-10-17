@@ -13,6 +13,9 @@ else
 fi
 #PS1='\[\e[0;32m\]\u\[\e[0;37m\]@\[\e[0;32m\]\h\[\e[0;37m\]\e[1m-Arch32:\[\e[01;34m\]\W\[\e[00m\]\$ '
 
+# For macos, be chill, I want to use bash.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # If this is an xterm set the title to working directory
 case "$TERM" in
 xterm*|rxvt*)
@@ -70,16 +73,6 @@ function _tmux_complete_session() {
 complete -F _tmux_complete_session tmux a -t
 
 
-
-# GitHub
-alias yon="osascript -e 'tell application \"yubiswitch\" to KeyOn'"
-alias yoff="osascript -e 'tell application \"yubiswitch\" to KeyOff'"
-
-PERL_MB_OPT="--install_base \"/Users/jonahberquist/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/jonahberquist/perl5"; export PERL_MM_OPT;
-eval "$(rbenv init -)"
-
-export GOPATH=${HOME}/dev/go
 
 alias today='gdate +%F'
 recap() {
