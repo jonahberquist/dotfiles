@@ -7,3 +7,4 @@ setopt INC_APPEND_HISTORY
 
 export EDITOR='/usr/bin/vim'
 alias ls='ls --color'
+alias grep='grep --color'
